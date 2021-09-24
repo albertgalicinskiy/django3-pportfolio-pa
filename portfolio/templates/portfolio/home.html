@@ -1,0 +1,11 @@
+<h1>Меня зовут Альберт и это моё портфолио</h1>
+
+{% for project in projects %}
+<h2>{{ project.title }}</h2>
+<p>{{ project.descriptiion }}</p>
+<img src="{{ project.image.url }}">
+{% if project.url %}
+<br><a href="{{ project.url }}">Link</a>
+{% endif %}
+
+{% endfor %}
