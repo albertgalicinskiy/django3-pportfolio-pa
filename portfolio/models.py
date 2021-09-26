@@ -18,3 +18,7 @@ class Project(models.Model):
     # URL для картинок ввиде ссылки при нажатии которые будут открываться в
     # новой вкладке исп-ся - blank=True
     url = models.URLField(blank=True)
+
+    # Позволит в админкке видеть не номер проекта а его название из зоголовка
+    def __str__(self):
+        return self.title
