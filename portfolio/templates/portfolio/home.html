@@ -1,5 +1,11 @@
 <h1>Меня зовут Альберт и это моё портфолио</h1>
 
+{% load static %}
+
+<a href="{% static 'portfolio/HTML-CSS.pdf' %}">Sert</a>
+
+<img src="{% static 'portfolio/dead.png' %}">
+
 {% for project in projects %}
 <h2>{{ project.title }}</h2>
 <p>{{ project.descriptiion }}</p>

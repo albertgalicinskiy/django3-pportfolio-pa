@@ -1,7 +1,9 @@
 Blog
 
 {% for blog in blogs %}
-<h2><a href=#>{{ blog.title }}</a></h2>
+<!-- Для каждого заголовка блога будет ссылка на его содержимое
+ исп-я id -->
+<a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
 <p>{{ blog.date }}<p>
 <p>{{ blog.description }}</p>
 
