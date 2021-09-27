@@ -2,26 +2,42 @@
 
 {% block content %}
 
-<h1>Меня зовут Альберт и это моё портфолио</h1>
-
 {% load static %}
 
-<a href="{% url 'blog:all_blogs' %}">Blog</a>
-<br>
+<div class="d-flex justify-content-center">
+  <!-- <h1>Моё портфолио</h1> -->
+  <img src="{% static 'portfolio/me.jpg' %}" class="img-fluid" width="400px" height="400px">
+</div>
 
-<a href="{% static 'portfolio/HTML-CSS.pdf' %}">Sert</a>
-<br>
+<div class="d-flex justify-content-center">
+  <div class="col-md-9 text-center">
+    <h1 id="hometext" class="font-weight-bold">Альберт Галицинский главный Системный администратор
+    и Junior python программист</h1>
+  </div>
+</div>
 
-<img src="{% static 'portfolio/dead.png' %}">
+<h2 class="mt-5">Portfolio</h2>
+<hr>
 
-{% for project in projects %}
-<h2>{{ project.title }}</h2>
-<p>{{ project.descriptiion }}</p>
-<img src="{{ project.image.url }}">
-{% if project.url %}
-<br><a href="{{ project.url }}">Link</a>
-{% endif %}
+<div class="row">
+  {% for project in projects %}
 
+  <div class="col-lg-4 col-md-6">
+
+    {% if project.url %}
+    <a href="{{ project.url }}">
+      <img src="{{ project.image.url }}" class="mb-2 img-fluid">
+    </a>
+    {% else %}
+
+    <img src="{{ project.image.url }}" class="mb-2 img-fluid">
+    {% endif %}
+
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.descriptiion }}</p>
+
+  </div>
 {% endfor %}
+</div>
 
 {% endblock %}
