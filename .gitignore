@@ -3,4 +3,4 @@
 *.pyc
 __pycache__/
 /static/
-personal_portfolio/local_settngs.py
+personal_portfolio/local_settings.py
